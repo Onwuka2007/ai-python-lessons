@@ -1,0 +1,7 @@
+student_id,student_name,exam_name,score,max_score,status
+ST001,Alice Johnson,Python Basics,85,100,Passed
+ST002,Bob Smith,Python Basics,42,100,Failed
+ST003,Charlie Davis,Python Basics,90,100,Passed
+ST004,Diana Prince,Python Basics,76,100,Passed,
+ST005,Ethan Hunt,Python Basics,58,100,Failed23/2968,manny
+78/90,mnaa,math,45,90,failed
