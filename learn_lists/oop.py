@@ -1,45 +1,50 @@
-# Using classes
 class Student:
-    def __init__(self, name, house, patronus):
-        if not name:
-            raise ValueError('Missing name')
-        
+    def __init__(self, name, house):
+        # This triggers the setters when the object is first created!
         self.name = name
         self.house = house
-        self.patronus = patronus
     
     def __str__(self):
         return f'{self.name} from {self.house}'
     
-    def charm(self):
-        match self.patronus:
-            case 'Stag':
-                return 'has stag'
-            case 'Otter':
-                return 'has otter'
-            case _:
-                return 'nothing'
-            
-    # Getter - fn in a class that gets an attr
+    # --- GETTERS ---
+    @property
+    def name(self):
+        return self._name
+    
+    @property
     def house(self):
-        return self.house
+        return self._house
     
-    # Setter
+    # --- SETTERS ---
+    @name.setter
+    def name(self, name):
+        if not name:
+            raise ValueError('Missing name')
+        # FIX: Save to _name, don't just return it
+        self._name = name
+    
+    @house.setter
     def house(self, house):
-        self.house = house
-     
+        if not house:
+            raise ValueError('Missing house')
+        # FIX: Save to _house, using self.house here would loop infinitely!
+        self._house = house
+        
+    @classmethod
+    def get_student(cls):
+        name = input('Enter your name: ')
+        house = input('Enter your house: ')
+        return cls(name, house)
+       
 def main():
-    student = get_student()
+    student = Student.get_student()
     print(student)
-    print(student.charm())
     
-def get_student():
-    n = input('Name: ')
-    h = input('House: ')
-    p = input('Patronus: ')
+    # This assignment automatically triggers the 'house' setter method!
+    student.house = 'Number 4, Privet Drive'
+    print(student)
     
-    student = Student(n, h, p)
-    return student
     
 if __name__ == '__main__': 
     main()
