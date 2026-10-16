@@ -21,14 +21,12 @@ class Student:
     def name(self, name):
         if not name:
             raise ValueError("Missing name")
-        # FIX: Save to _name, don't just return it
         self._name = name
 
     @house.setter
     def house(self, house):
         if not house:
             raise ValueError("Missing house")
-        # FIX: Save to _house, using self.house here would loop infinitely!
         self._house = house
 
     @classmethod
