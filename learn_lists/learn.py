@@ -11,7 +11,7 @@
 # def main():
 #     x = int(input('Enter a number: '))
 #     print('x squared is', square(x))
-    
+
 # def square(n):
 #     return n * n
 
@@ -36,7 +36,7 @@
 #     # else:
 #     #     print('x is odd')
 #     print('x is even' if is_even(x) else 'x is odd')
-        
+
 # def is_even(n):
 #     return n % 2 == 0
 
@@ -67,7 +67,7 @@ i = 0
 
 # for _ in range(3):
 #     print('meow\n', end='' * 3)
-        
+
 # Purposeful infinite loop (until user enters a positive integer)
 # while True:
 #     n = int(input('What is n? '))
@@ -76,7 +76,7 @@ i = 0
 #     else:
 #         print('n must be a positive integer.')
 #         continue
-    
+
 # for _ in range(n):
 #     print('meow')
 
@@ -133,11 +133,11 @@ i = 0
 #     x, attempts = getInt('What is x? ')
 #     # print(f'Success after {if attempts > 0: attempts= attempts+1} attempts is {x}')
 #     print(f"Success after {attempts + 1 if attempts == 0 else attempts} {'attempt' if attempts == 1 or attempts == 0 else 'attempts'}!")
-    
-# def getInt(prompt: str): 
+
+# def getInt(prompt: str):
 #     attempts = 0
 #     while True:
-#         try: 
+#         try:
 #             x = int(input(prompt))
 #         except ValueError:
 #             attempts += 1
@@ -147,7 +147,7 @@ i = 0
 
 # main()
 
-# 
+#
 # import random, statistics, sys
 
 # coins = random.choice(["heads", "tails"])
@@ -179,7 +179,7 @@ i = 0
 
 # if len(sys.argv) != 2:
 #     sys.exit()
-    
+
 # response = requests.get('https://itunes.apple.com/search?entity=song&limit=3&term=' + sys.argv[1])
 
 # # to beautify
@@ -196,10 +196,10 @@ i = 0
 
 # def main():
 #     blog_title = "Transitioning from JavaScript to Python is Fun"
-    
+
 #     short_title = truncate_text(blog_title, 25)
 #     url_slug = slugify(blog_title)
-    
+
 #     print(f"Original: {blog_title}")
 #     print(f"Truncated: {short_title}")
 #     print(f"Slug: {url_slug}")
@@ -211,7 +211,7 @@ i = 0
 #     x = int(input('Enter a number: '))
 #     sq = calc_square(x)
 #     print(f'The square is {sq}')
-    
+
 # def calc_square(num):
 #     return num * num
 
@@ -219,12 +219,27 @@ i = 0
 #     main()
 
 # Unit testing this for strings
+# def main():
+#     n = input('Enter your name: ')
+#     print(hello(n))
+
+# def hello(name='world'):
+#     return f'Hello {name}'
+
+# if __name__ == '__main__':
+#     main()
+
+
 def main():
-    n = input('Enter your name: ')
-    print(hello(n))    
-    
-def hello(name='world'):
-    return f'Hello {name}'
-    
-if __name__ == '__main__':
+    n = int(input("Enter n: "))
+    for s in sheep(n):
+        print(s)
+
+
+def sheep(n):
+    for i in range(n):
+        yield "😭" * (i + 1)
+
+
+if __name__ == "__main__":
     main()
