@@ -1,4 +1,4 @@
-lazy import statistics
+import statistics
 
 class Question:
     def __init__(self, question_id, test, max_marks):

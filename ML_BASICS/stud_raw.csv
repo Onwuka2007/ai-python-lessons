@@ -1,0 +1,12 @@
+student_id,name,city,study_hours,attendance,score,joined
+101, Amaka ,lagos,2,65,48,2026-01-05
+102,Bola,Abuja ,3,70,55,2026-01-08
+103,CHIDI,LAGOS,5,85,76,2026-02-02
+104,Dami,Ibadan,,60,42,2026-02-10
+105,Efe,Abuja,1,50,35,2026-02-14
+106,Femi,Lagos,4,80,68,2026-03-01
+107,Grace,Ibadan,6,95,88,2026-03-03
+108,Hassan,Abuja,bad,75,61,not recorded
+109,Ife,Lagos,3.5,88,73,2026-03-15
+110,John,Ibadan,7,98,94,2026-03-20
+104,Dami,Ibadan,,60,42,2026-02-10

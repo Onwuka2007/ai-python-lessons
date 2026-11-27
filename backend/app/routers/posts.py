@@ -9,7 +9,6 @@ router = APIRouter(
     tags=["Posts"],  # Groups these endpoints nicely in the Swagger UI docs
 )
 
-
 class Post(BaseModel):
     title: str
     content: str
@@ -68,12 +67,15 @@ def update_post(id: int, post: Post):
     post_index = next(
         (index for index, p in enumerate(my_posts) if p["id"] == id), None
     )
+        
     if post_index is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail=f"Post with id {id} not found"
         )
 
+    # convert to a dict
     post_dict = post.model_dump()
+    
     post_dict["id"] = id
     my_posts[post_index] = post_dict
     return {"message": "Successfully updated!", "data": post_dict}

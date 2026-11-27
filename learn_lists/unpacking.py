@@ -1,4 +1,4 @@
-def total(g, s, k, *args):
+def total(g, s, k, *args, **kwargs):
     return (g * 17 + s) * 29 + k
 
 
